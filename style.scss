@@ -1,0 +1,210 @@
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    background-color: darken($color: #1d2c48, $amount: 0);
+    flex-direction: column;
+}
+
+@mixin border_input {
+    border-radius: 12px;
+    border: 2px solid #4d5562;
+}
+
+@mixin stepper__circle {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #4d5562;
+    transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+$text-color: #e2e4e8;
+
+body {
+    margin: 0 auto;
+
+    #app {
+        @include flex;
+        background: radial-gradient(circle at 0rem 0rem, #281f55, transparent 30%), radial-gradient(circle at 100% 100%, #271f54, transparent 30%);
+        background-color: #121827;
+    }
+    .step-1-form, .step-2-form, .step-3-form{
+        background: #222b38;
+
+    }
+    .step-1-form {
+       
+        padding: 40px;
+        margin: 0 auto;
+        color: $text-color;
+        font-family: "Karla", sans-serif;
+        border: 1px solid #4e5664;
+        border-radius: 16px;
+        width: 20%;
+
+        .step-1-form_heading {
+            font-size: 20px;
+            margin-bottom: 28px;
+        }
+
+        .step-1-form_label {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 13px;
+            color: #a7a7af;
+            margin-top: 24px;
+
+            .step-1-form_input {
+                padding: 14px;
+                @include border_input;
+                background: transparent;
+                cursor: pointer;
+                color: white;
+
+                &:focus {
+                    border-color: rgb(116, 93, 217);
+                    border-width: 3px;
+                    outline: none;
+                }
+            }
+        }
+
+    }
+
+    .step-1-form__button {
+        background: linear-gradient(to bottom, #855fef, #662dd2);
+        color: $text-color;
+        padding: 12px 35px;
+        border-radius: 32px;
+        border: none;
+        font-weight: 700;
+        margin: 2.3rem auto 0;
+        cursor: pointer;
+        display: block;
+    }
+
+    .step-2-form {
+        background: #202734;
+        padding: 40px;
+        margin: 0 auto;
+        color: $text-color;
+        font-family: "Karla", sans-serif;
+        border: 1px solid #4e5664;
+        border-radius: 16px;
+        max-width: 456px;
+
+        .step-2-form__heading {
+            margin-bottom: 38px;
+            font-size: 20px;
+        }
+
+        .step-2-form__label {
+            display: block;
+            padding: 14px 12px;
+            margin-top: 16px;
+            background: #394050;
+            border-radius: 11px;
+            font-size: 14px;
+            cursor: pointer;
+            color: #a2a2aa;
+            border: 1px solid #4d5562;
+            input[type="checkbox"] {
+                display: none; // Ẩn checkbox nhưng vẫn hoạt động khi click vào label
+            }
+        
+            // Khi checkbox được chọn, label sẽ đổi màu
+            &:has(input[type="checkbox"]:checked) {
+                background: #845def;
+                color: #fff;
+                border-color: #845def;
+            }
+        }
+
+        .step-2-form__input {
+            appearance: none;
+        }
+
+        .step-2-form__button {
+            @extend .step-1-form__button;
+        }
+       
+    }
+    .step-3-form {
+        background: #202734;
+        padding: 40px;
+        margin: 0 auto;
+        color: $text-color;
+        font-family: "Karla", sans-serif;
+        border: 1px solid #4e5664;
+        border-radius: 16px;
+        max-width: 456px;
+        width: 456px;
+        .step-3-form__button {
+            @extend .step-1-form__button;
+        }
+        .step-3-form__heading {
+            margin-bottom: 38px;
+            font-size: 20px;
+        }
+        .step-3-form__label{
+            cursor: pointer;
+            color: #a2a2aa;
+            font-size: 14px;
+        }
+    }
+
+    .stepper {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+
+        .stepper_current-step {
+            transform: translate(-100%);
+            color: #a7a7af;
+            font-size: 0.7rem;
+        }
+
+        .stepper__circles {
+            display: flex;
+            gap: 16px;
+            transform: translate(-30%);
+
+            .stepper__circle {
+                @include stepper__circle;
+            }
+
+            .stepper__circle--current {
+                box-shadow: 0 0 0 0.4rem #342d60;
+            }
+
+            .stepper__circle--active {
+                background: #682ed6;
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .body {
+          width: 100%;
+          margin: 0 auto;
+          
+        }
+        .step-1-form, .step-2-form, .step-3-form{
+            padding: 40px;
+            margin: 0 auto;
+            color: #e2e4e8;
+            font-family: "Karla", sans-serif;
+            border: 1px solid #4e5664;
+            border-radius: 16px;
+             width: 85%;
+           box-sizing: border-box;
+        }
+        .stepper{
+            margin-top: 0 !important;
+        }
+    }    
+   
+}
+ 

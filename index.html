@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <form class="step-1-form" action="">
+            <h2 class="step-1-form_heading">Register</h2>
+            <label class="step-1-form_label" for="">Name
+                <input class="step-1-form_input" id="name" type="text" name="name" placeholder="John Doe" required>
+            </label>
+            <label class="step-1-form_label" for="">Email
+                <input class="step-1-form_input" id="email" type="email" name="email" placeholder="example@gmail.com" required>
+            </label>
+            <button class="step-1-form__button" type="submit">Continue</button>
+        </form>
+        <form class="step-2-form" data-cy="step-2-form">
+            <h2 class="step-2-form__heading">
+                Which topics you are interested in?
+            </h2>
+            <label class="step-2-form__label " data-cy="step-2-form__label" >
+                <input class="step-2-form__input" type="checkbox" value="Software Development" name="topic">
+                Software Development
+            </label>
+            <label class="step-2-form__label " data-cy="step-2-form__label">
+                <input class="step-2-form__input" type="checkbox" value="User Experience" name="topic">
+                User Experience
+            </label>
+            <label class="step-2-form__label " data-cy="step-2-form__label">
+                <input class="step-2-form__input" type="checkbox" value="Graphic Design" name="topic">
+                Graphic Design
+            </label>
+            <button class="step-2-form__button" type="submit" fdprocessedid="xefq6">Continue</button>
+        </form>
+        <form class="step-3-form" data-cy="step-3-form">
+            <h2 class="step-3-form__heading">Summary</h2>
+            <p class="step-3-form__data">
+                <span class="step-3-form__label">Name:</span>
+                <span class="step-3-form__name" data-cy="step-3-form__name"></span>
+            </p>
+            <p class="step-3-form__data">
+                <span class="step-3-form__label">Email:</span>
+                <span class="step-3-form__email" data-cy="step-3-form__email"></span>
+            </p>
+            <p class="step-3-form__data">
+                <span class="step-3-form__label">Topics:</span>
+            </p>
+            <ul class="step-3-form__list" data-cy="step-3-form__list">
+                <li></li>
+            </ul>
+            <button class="step-3-form__button" type="submit" fdprocessedid="hgrir">Confirm</button>
+        </form>
+        <div class="stepper">
+            <p class="stepper_current-step">Step
+                <span class="stepper_step">1 of 3</span>
+            </p>
+            <div class="stepper__circles">
+                <div class="stepper__circle stepper__circle--active stepper__circle--current"></div>
+                <div class="stepper__circle"></div>
+                <div class="stepper__circle"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
