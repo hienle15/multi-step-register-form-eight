@@ -2,9 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100svh;
+    min-height: 100vh;
     background-color: darken($color: #1d2c48, $amount: 0);
     flex-direction: column;
+}
+
+@mixin form {
+    padding: 40px;
+    margin: 0 auto;
+    color: $text-color;
+    font-family: "Karla", sans-serif;
+    border: 1px solid #4e5664;
+    border-radius: 16px;
+    width: 20%;
+
 }
 
 @mixin border_input {
@@ -21,6 +32,8 @@
 }
 
 $text-color: #e2e4e8;
+$font-size: 20px;
+$color-lable: #a2a2aa;
 
 body {
     margin: 0 auto;
@@ -30,22 +43,19 @@ body {
         background: radial-gradient(circle at 0rem 0rem, #281f55, transparent 30%), radial-gradient(circle at 100% 100%, #271f54, transparent 30%);
         background-color: #121827;
     }
-    .step-1-form, .step-2-form, .step-3-form{
+
+    .step-1-form,
+    .step-2-form,
+    .step-3-form {
         background: #222b38;
 
     }
+
     .step-1-form {
-       
-        padding: 40px;
-        margin: 0 auto;
-        color: $text-color;
-        font-family: "Karla", sans-serif;
-        border: 1px solid #4e5664;
-        border-radius: 16px;
-        width: 20%;
+        @include form;
 
         .step-1-form_heading {
-            font-size: 20px;
+            font-size: $font-size;
             margin-bottom: 28px;
         }
 
@@ -54,7 +64,7 @@ body {
             flex-direction: column;
             gap: 8px;
             font-size: 13px;
-            color: #a7a7af;
+            color: $color-lable;
             margin-top: 24px;
 
             .step-1-form_input {
@@ -87,18 +97,11 @@ body {
     }
 
     .step-2-form {
-        background: #202734;
-        padding: 40px;
-        margin: 0 auto;
-        color: $text-color;
-        font-family: "Karla", sans-serif;
-        border: 1px solid #4e5664;
-        border-radius: 16px;
-        max-width: 456px;
+        @include form;
 
         .step-2-form__heading {
             margin-bottom: 38px;
-            font-size: 20px;
+            font-size: $font-size;
         }
 
         .step-2-form__label {
@@ -109,12 +112,13 @@ body {
             border-radius: 11px;
             font-size: 14px;
             cursor: pointer;
-            color: #a2a2aa;
+            color:$color-lable;
             border: 1px solid #4d5562;
+
             input[type="checkbox"] {
                 display: none; // Ẩn checkbox nhưng vẫn hoạt động khi click vào label
             }
-        
+
             // Khi checkbox được chọn, label sẽ đổi màu
             &:has(input[type="checkbox"]:checked) {
                 background: #845def;
@@ -130,28 +134,24 @@ body {
         .step-2-form__button {
             @extend .step-1-form__button;
         }
-       
+
     }
+
     .step-3-form {
-        background: #202734;
-        padding: 40px;
-        margin: 0 auto;
-        color: $text-color;
-        font-family: "Karla", sans-serif;
-        border: 1px solid #4e5664;
-        border-radius: 16px;
-        max-width: 456px;
-        width: 456px;
+        @include form;
+
         .step-3-form__button {
             @extend .step-1-form__button;
         }
+
         .step-3-form__heading {
             margin-bottom: 38px;
-            font-size: 20px;
+            font-size: $font-size;
         }
-        .step-3-form__label{
+
+        .step-3-form__label {
             cursor: pointer;
-            color: #a2a2aa;
+            color:$color-lable;
             font-size: 14px;
         }
     }
@@ -185,26 +185,30 @@ body {
             }
         }
     }
+
     @media screen and (max-width: 768px) {
         .body {
-          width: 100%;
-          margin: 0 auto;
-          
+            width: 100%;
+            margin: 0 auto;
+
         }
-        .step-1-form, .step-2-form, .step-3-form{
+
+        .step-1-form,
+        .step-2-form,
+        .step-3-form {
             padding: 40px;
             margin: 0 auto;
             color: #e2e4e8;
             font-family: "Karla", sans-serif;
             border: 1px solid #4e5664;
             border-radius: 16px;
-             width: 85%;
-           box-sizing: border-box;
+            width: 85%;
+            box-sizing: border-box;
         }
-        .stepper{
+
+        .stepper {
             margin-top: 0 !important;
         }
-    }    
-   
+    }
+
 }
- 

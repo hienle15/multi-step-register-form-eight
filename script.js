@@ -16,12 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Cập nhật trạng thái vòng tròn
         circles.forEach((circle, index) => {
-            if (index <= stepIndex) {
-                circle.classList.add("stepper__circle--active"); // Đã hoàn thành
-                circle.classList.add("stepper__circle--current"); // Đang ở step hiện tại
-            } else {
-                circle.classList.remove("stepper__circle--active", "stepper__circle--current"); // Reset
-            }
+            circle.classList.toggle("stepper__circle--active", index <= stepIndex);
+            circle.classList.toggle("stepper__circle--current", index === stepIndex);
         });
 
         // Cập nhật chữ "Step x of 3"

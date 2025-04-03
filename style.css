@@ -5,13 +5,15 @@ body #app {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100svh;
+  min-height: 100vh;
   background-color: #1d2c48;
   flex-direction: column;
   background: radial-gradient(circle at 0rem 0rem, #281f55, transparent 30%), radial-gradient(circle at 100% 100%, #271f54, transparent 30%);
   background-color: #121827;
 }
-body .step-1-form, body .step-2-form, body .step-3-form {
+body .step-1-form,
+body .step-2-form,
+body .step-3-form {
   background: #222b38;
 }
 body .step-1-form {
@@ -32,7 +34,7 @@ body .step-1-form .step-1-form_label {
   flex-direction: column;
   gap: 8px;
   font-size: 13px;
-  color: #a7a7af;
+  color: #a2a2aa;
   margin-top: 24px;
 }
 body .step-1-form .step-1-form_label .step-1-form_input {
@@ -60,14 +62,13 @@ body .step-1-form__button, body .step-3-form .step-3-form__button, body .step-2-
   display: block;
 }
 body .step-2-form {
-  background: #202734;
   padding: 40px;
   margin: 0 auto;
   color: #e2e4e8;
   font-family: "Karla", sans-serif;
   border: 1px solid #4e5664;
   border-radius: 16px;
-  max-width: 456px;
+  width: 20%;
 }
 body .step-2-form .step-2-form__heading {
   margin-bottom: 38px;
@@ -98,15 +99,13 @@ body .step-2-form .step-2-form__input {
           appearance: none;
 }
 body .step-3-form {
-  background: #202734;
   padding: 40px;
   margin: 0 auto;
   color: #e2e4e8;
   font-family: "Karla", sans-serif;
   border: 1px solid #4e5664;
   border-radius: 16px;
-  max-width: 456px;
-  width: 456px;
+  width: 20%;
 }
 body .step-3-form .step-3-form__heading {
   margin-bottom: 38px;
@@ -150,7 +149,9 @@ body .stepper .stepper__circles .stepper__circle--active {
     width: 100%;
     margin: 0 auto;
   }
-  body .step-1-form, body .step-2-form, body .step-3-form {
+  body .step-1-form,
+  body .step-2-form,
+  body .step-3-form {
     padding: 40px;
     margin: 0 auto;
     color: #e2e4e8;
